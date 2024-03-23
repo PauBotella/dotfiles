@@ -60,27 +60,15 @@ def workspaces():
         separator(),
     ]
 
+rofi_command = "rofi -show p -modi p:'rofi-power-menu --symbols-font \"Symbols Nerd Font Mono\"' -font \"UbuntuMono Nerd Font 16\" -theme simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
 
 primary_widgets = [
     *workspaces(),
 
     separator(),
 
-    powerline('color4', 'dark'),
 
-    icon(bg="color4", text=' '), # Icon: nf-fa-download
-    
-    widget.CheckUpdates(
-        distro="Ubuntu",
-        background=colors['color4'],
-        colour_have_updates=colors['text'],
-        colour_no_updates=colors['text'],
-        no_update_string='0',
-        display_format='{updates}',
-        update_interval=1800,
-    ),
-
-    powerline('color3', 'color4'),
+    powerline('color3', 'text'),
 
     icon(bg="color3", text='󰕾 '),
     
@@ -97,12 +85,40 @@ primary_widgets = [
 
     widget.CurrentLayout(**base(bg='color2',fg='text'), padding=5),
 
-    powerline('color1', 'color2'),
+    powerline('verderaro', 'color2'),
+
+
+    icon(bg="verderaro", fontsize=17, text=''),
+
+    widget.ThermalSensor(
+        **base(bg='verderaro',fg='text'),
+        tag_sensor='Tctl',
+        format='   {temp:.0f}{unit}  '
+    ),
+     widget.NvidiaSensors(
+         **base(bg='verderaro',fg='text'),
+        format= '󰾲 {temp}°C'
+    ),
+
+
+    powerline('color1', 'verderaro'),
 
     icon(bg="color1", fontsize=17, text='󰃰 '),
 
-    widget.Clock(**base(bg='color1'), format='%H:%M - %d/%m/%Y '),
+    widget.Clock(**base(bg='color1',fg='text'), format='%H:%M - %d/%m/%Y '),
 
+
+
+powerline('color4', 'color1'),
+
+
+    icon(bg="text", fontsize=17, text=''),
+
+    widget.TextBox(
+        **base(bg='color4',fg='text'),
+        fmt='⏻  ',
+        mouse_callbacks = {"Button1":lazy.spawn(rofi_command)}
+    ),
 ]
 
 secondary_widgets = [

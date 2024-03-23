@@ -51,7 +51,7 @@ keys = [
     Key([mod], "e", lazy.spawn("pcmanfm")),
 
     # Terminal
-    Key([mod], "Return", lazy.spawn("alacritty")),
+    Key([mod], "Return", lazy.spawn("kitty")),
 
     # Redshift
     Key([mod], "r", lazy.spawn("redshift -O 2400")),

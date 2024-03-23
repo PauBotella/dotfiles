@@ -8,6 +8,8 @@ from settings.screens import screens
 from settings.mouse import mouse
 from settings.path import qtile_path
 
+from os import path
+import subprocess
 
 main = None
 dgroups_key_binder = None
@@ -18,3 +20,7 @@ cursor_warp = True
 auto_fullscreen = True
 focus_on_window_activation = 'urgent'
 wmname = 'LG3D'
+
+@hook.subscribe.startup_once
+def autostart():
+    subprocess.call([path.join(qtile_path, 'autostart.sh')])

@@ -1,0 +1,60 @@
+scan_timeout = 60
+add_newline = false
+
+[line_break]
+disabled = true
+
+[directory]
+style = "bold blue"
+
+[git_branch]
+format = "[$symbol$branch]($style) "
+
+
+[python]
+format = '[${symbol}${pyenv_prefix}(${version} )(\($virtualenv\) )]($style)'
+symbol = " "
+
+[php]
+format = "[$symbol($version )]($style)"
+symbol = "󰌟 "
+
+[c]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[haskell]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[dart]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[java]
+format = "[${symbol}(${version} )]($style)"
+symbol = " "
+
+[rust]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+symbol = "󰎙 "
+
+[rlang]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[gradle]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[kotlin]
+format = "[$symbol($version )]($style)"
+symbol = " "
+
+[lua]
+format = "[$symbol($version )]($style)"
+symbol = " "
