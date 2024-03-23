@@ -34,21 +34,17 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
 
     Key ([mod, "control"], "q", lazy.shutdown()),
-    Key ([mod], "r", lazy.spawncmd()),
 
     # ------------ App Configs ------------
 
     # Menu
     Key([mod], "m", lazy.spawn("rofi -show drun")),
 
-    # Window Nav
-    Key([mod, "shift"], "m", lazy.spawn("rofi -show")),
-
     # Browser
-    Key([mod], "b", lazy.spawn("firefox")),
+    Key([mod], "b", lazy.spawn("librewolf")),
 
     # File Explorer
-    Key([mod], "e", lazy.spawn("pcmanfm")),
+    Key([mod], "e", lazy.spawn("nautilus")),
 
     # Terminal
     Key([mod], "Return", lazy.spawn("kitty")),
