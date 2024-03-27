@@ -5,7 +5,7 @@ alias ll='exa -l'
 alias la='exa -la'
 alias rm='rm -rf'
 #alias tree='exa -T'
-alias logout='sudo pkill -u pau'
+alias logout='sudo pkill -u $USER'
 alias grep="grep --color=auto"
 alias cat="batcat --paging=never"
 alias icat='kitty +kitten icat'
