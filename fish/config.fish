@@ -1,5 +1,5 @@
 starship init fish | source
-pokemon-colorscripts --no-title -r 1,3,6
+pokemon-colorscripts --no-title -r
 alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la'
