@@ -60,8 +60,7 @@ def workspaces():
         separator(),
     ]
 
-rofi_command = "rofi -show p -modi p:'rofi-power-menu --symbols-font \"Symbols Nerd Font Mono\"' -font \"UbuntuMono Nerd Font 16\" -theme simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
-
+rofi_command = "rofi -show p -modi p:'rofi-power-menu ' -font \"UbuntuMono Nerd Font 16\" -theme simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
 primary_widgets = [
     *workspaces(),
 
