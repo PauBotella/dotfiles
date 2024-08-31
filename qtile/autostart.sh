@@ -1,3 +1,3 @@
 #!/bin/sh
 picom &
-feh --bg-scale ~/Wallpapers/fondonegrillo.jpg &
+#feh --bg-scale ~/Wallpapers/fondonegrillo.jpg &

@@ -1,6 +1,6 @@
 from libqtile import widget
 from .theme import colors
-from libqtile.command import lazy
+from libqtile.lazy import lazy
 
 def base(fg='light', bg='dark'): 
     return {
@@ -60,7 +60,7 @@ def workspaces():
         separator(),
     ]
 
-rofi_command = "rofi -show p -modi p:'rofi-power-menu ' -font \"UbuntuMono Nerd Font 16\" -theme simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
+rofi_command = "rofi -show p -modi p:'rofi-power-menu' -font \"UbuntuMono Nerd Font 16\" -theme ~/.config/rofi/themes/simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
 primary_widgets = [
     *workspaces(),
 
