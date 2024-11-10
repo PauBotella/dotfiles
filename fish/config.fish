@@ -1,10 +1,11 @@
 starship init fish | source
-pokemon-colorscripts --no-title -r
+#pokemon-colorscripts --no-title -r
+dex-vision -r
 alias ls='exa'
 alias ll='exa -l'
 alias la='exa -la'
 alias rm='rm -rf'
-#alias tree='exa -T'
+alias tree='exa -T'
 alias logout='sudo pkill -u $USER'
 alias grep="grep --color=auto"
 alias cat="batcat --paging=never"
