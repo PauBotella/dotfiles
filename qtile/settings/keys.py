@@ -49,7 +49,7 @@ keys = [
     Key([mod], "Return", lazy.spawn("kitty")),
 
     # Redshift
-    Key([mod], "r", lazy.spawn("redshift -O 2400")),
+    Key([mod], "r", lazy.spawn("redshift -O 1400")),
     Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
 
 ]
