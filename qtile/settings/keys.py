@@ -43,7 +43,7 @@ keys = [
     Key([mod], "b", lazy.spawn("librewolf")),
 
     # File Explorer
-    Key([mod], "e", lazy.spawn("nautilus")),
+    Key([mod], "e", lazy.spawn("nemo")),
 
     # Terminal
     Key([mod], "Return", lazy.spawn("kitty")),
