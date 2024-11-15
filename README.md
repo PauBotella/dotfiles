@@ -4,6 +4,10 @@ WM: Qtile
 
 Terminal: Kitty
 
+File Manager: Nemo
+
+Theme: Catpuccin Mocha
+
 OS: POP! OS 
 
 ![env](https://github.com/user-attachments/assets/6f78885d-e8eb-4ace-9345-a7529163ebe1)
