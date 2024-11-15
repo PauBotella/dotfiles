@@ -11,3 +11,4 @@ OS: POP! OS
 
 https://github.com/user-attachments/assets/b5c063bb-2fea-46ff-ad42-08a2a62e21ad
 
+Script that show animated pokemon sprites in terminal [DexVision](https://github.com/PauBotella/DexVision)
