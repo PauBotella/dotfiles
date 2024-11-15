@@ -6,6 +6,10 @@ Terminal: Kitty
 
 File Manager: Nemo
 
+Shell: Fish
+
+Prompt: Starship
+
 Theme: Catpuccin Mocha
 
 OS: POP! OS 
