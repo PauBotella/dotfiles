@@ -42,7 +42,7 @@ def workspaces():
             padding_y=8,
             padding_x=5,
             borderwidth=1,
-            active="#ffd47e", # color that the groups will have when they have something inside
+            active=colors['active'], # color that the groups will have when they have something inside
             inactive=colors['inactive'],
             rounded=False,
             highlight_method='block',
@@ -64,24 +64,10 @@ primary_widgets = [
 
     separator(),
 
- powerline('color3', 'text'),
- widget.PulseVolume(
-     **base(bg='color3',fg='text'),
-    limit_max_volume=True,
-    fmt=' Audio {}  ',
-    step=5,
-    volume_app='pavucontrol',
-    fontsize=15,
-    update_interval=0.1,
-    emoji=True,
-    emoji_list=['','','',''],
-    mouse_callbacks={
-        "Button1":lazy.spawn("pavucontrol")
-    }
-),
+ #powerline('color3', 'text'),
 
 
-    powerline('color2', 'color3'),
+    powerline('color2', 'dark'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65,),
 
@@ -105,22 +91,10 @@ primary_widgets = [
     icon(bg="color1", fontsize=17, text='󰃰 '),
 
     widget.Clock(**base(bg='color1',fg='text'), format='%H:%M - %d/%m/%Y '),
-]
 
-secondary_widgets = [
-    *workspaces(),
+    powerline('dark', 'color1'),
 
-    powerline('color1', 'dark'),
-
-    widget.CurrentLayoutIcon(**base(bg='color1'), scale=0.65),
-
-    widget.CurrentLayout(**base(bg='color1'), padding=5),
-
-    powerline('color2', 'color1'),
-
-    widget.Clock(**base(bg='color2'), format='%d/%m/%Y - %H:%M '),
-
-    powerline('dark', 'color2'),
+    widget.Systray(background=colors['dark'], padding=5),
 ]
 
 widget_defaults = {
