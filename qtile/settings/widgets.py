@@ -27,7 +27,6 @@ def powerline(fg="light", bg="dark"):
         **base(fg, bg),
         text="",
         fontsize=110,
-        padding=-2
     )
 
 
@@ -43,7 +42,7 @@ def workspaces():
             padding_y=8,
             padding_x=5,
             borderwidth=1,
-            active="#DFFF00", # color that the groups will have when they have something inside
+            active="#ffd47e", # color that the groups will have when they have something inside
             inactive=colors['inactive'],
             rounded=False,
             highlight_method='block',
@@ -60,70 +59,56 @@ def workspaces():
         separator(),
     ]
 
-rofi_command = "rofi -show p -modi p:'rofi-power-menu' -font \"UbuntuMono Nerd Font 16\" -theme ~/.config/rofi/themes/simple-tokyonight -theme-str 'window {width: 8em;location: northeast;} listview {lines: 6;}'"
 primary_widgets = [
     *workspaces(),
 
     separator(),
 
-
-    powerline('color3', 'text'),
-
-    icon(bg="color3", text='󰕾 '),
-    
-    widget.Volume(**base(bg='color3',fg='text'),
-                    fmt='Audio',
-                    mouse_callbacks = {"Button1":lazy.spawn("pavucontrol"),
-                                        "Button4": lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%"),
-                                        "Button5": lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")}
+ powerline('color3', 'text'),
+ widget.PulseVolume(
+     **base(bg='color3',fg='text'),
+    limit_max_volume=True,
+    fmt=' Audio {}  ',
+    step=5,
+    volume_app='pavucontrol',
+    fontsize=15,
+    update_interval=0.1,
+    emoji=True,
+    emoji_list=['','','',''],
+    mouse_callbacks={
+        "Button1":lazy.spawn("pavucontrol")
+    }
 ),
+
 
     powerline('color2', 'color3'),
 
-    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65),
+    widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65,),
 
     widget.CurrentLayout(**base(bg='color2',fg='text'), padding=5),
 
-    powerline('verderaro', 'color2'),
-
-
-    icon(bg="verderaro", fontsize=17, text=''),
+    powerline('red', 'color2'),
 
     widget.ThermalSensor(
-        **base(bg='verderaro',fg='text'),
+        **base(bg='red',fg='text'),
         tag_sensor='Tctl',
         format='   {temp:.0f}{unit}  '
     ),
      widget.NvidiaSensors(
-         **base(bg='verderaro',fg='text'),
+         **base(bg='red',fg='text'),
         format= '󰾲 {temp}°C'
     ),
 
 
-    powerline('color1', 'verderaro'),
+    powerline('color1', 'red'),
 
     icon(bg="color1", fontsize=17, text='󰃰 '),
 
     widget.Clock(**base(bg='color1',fg='text'), format='%H:%M - %d/%m/%Y '),
-
-
-
-powerline('color4', 'color1'),
-
-
-    icon(bg="text", fontsize=17, text=''),
-
-    widget.TextBox(
-        **base(bg='color4',fg='text'),
-        fmt='⏻  ',
-        mouse_callbacks = {"Button1":lazy.spawn(rofi_command)}
-    ),
 ]
 
 secondary_widgets = [
     *workspaces(),
-
-    separator(),
 
     powerline('color1', 'dark'),
 
@@ -143,4 +128,6 @@ widget_defaults = {
     'fontsize': 14,
     'padding': 1,
 }
+extension_defaults = widget_defaults.copy()
+
 extension_defaults = widget_defaults.copy()

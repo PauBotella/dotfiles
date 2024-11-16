@@ -21,6 +21,7 @@ auto_fullscreen = True
 focus_on_window_activation = 'urgent'
 wmname = 'LG3D'
 
+
 @hook.subscribe.startup_once
 def autostart():
     subprocess.call([path.join(qtile_path, 'autostart.sh')])

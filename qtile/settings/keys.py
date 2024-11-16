@@ -45,6 +45,9 @@ keys = [
     # File Explorer
     Key([mod], "e", lazy.spawn("nemo")),
 
+    # Screenshot
+    Key([mod], "s", lazy.spawn("scrot -s")),
+
     # Terminal
     Key([mod], "Return", lazy.spawn("kitty")),
 
