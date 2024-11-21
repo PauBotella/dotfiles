@@ -5,3 +5,4 @@ xsettingsd &
 udiskie -t &
 volumeicon &
 nm-applet &
+redshift -O 4000 &

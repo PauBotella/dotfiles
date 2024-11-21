@@ -1,58 +1,47 @@
 from libqtile.config import Key
 from libqtile.lazy import lazy
-mod = "mod4"
-
+win = "mod4"
 keys = [
     # ------------ Window Configs ------------
 
     # Switch between windows in current stack pane
-    Key ([mod], "j", lazy.layout.down()),
-    Key ([mod], "k", lazy.layout.up()),
-    Key ([mod], "h", lazy.layout.left()),
-    Key ([mod], "l", lazy.layout.right()),
+    Key ([win], "j", lazy.layout.down()),
+    Key ([win], "k", lazy.layout.up()),
+    Key ([win], "h", lazy.layout.left()),
+    Key ([win], "l", lazy.layout.right()),
 
     # Change window sizes (MonadTall)
-    Key ([mod, "shift"], "l", lazy.layout.grow()),
-    Key ([mod, "shift"], "h", lazy.layout.shrink()),
+    Key ([win, "shift"], "l", lazy.layout.grow()),
+    Key ([win, "shift"], "h", lazy.layout.shrink()),
 
     # Toggle floating
-    Key ([mod, "shift"], "f", lazy.window.toggle_floating()),
+    Key ([win, "shift"], "f", lazy.window.toggle_floating()),
 
     # Move windows up or down in current stack
-    Key ([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key ([mod, "shift"], "k", lazy.layout.shuffle_up()),
+    Key ([win, "shift"], "j", lazy.layout.shuffle_down()),
+    Key ([win, "shift"], "k", lazy.layout.shuffle_up()),
 
     # Toggle between different layouts as defined below
-    Key ([mod], "Tab", lazy.next_layout()),
-    Key ([mod, "shift"], "Tab", lazy.prev_layout()),
+    Key ([win], "Tab", lazy.next_layout()),
+    Key ([win, "shift"], "Tab", lazy.prev_layout()),
 
     # Kill window
-    Key ([mod], "w", lazy.window.kill()),
+    Key ([win], "w", lazy.window.kill()),
 
     # Restart Qtile
-    Key([mod, "control"], "r", lazy.restart()),
+    Key([win, "control"], "r", lazy.restart()),
 
-    Key ([mod, "control"], "q", lazy.shutdown()),
+    Key ([win, "control"], "q", lazy.shutdown()),
 
     # ------------ App Configs ------------
 
-    # Menu
-    Key([mod], "m", lazy.spawn("rofi -show drun")),
+    Key([win], "space", lazy.spawn("rofi -show drun")),
 
-    # Browser
-    Key([mod], "b", lazy.spawn("librewolf")),
+    Key([win], "b", lazy.spawn("librewolf")),
 
-    # File Explorer
-    Key([mod], "e", lazy.spawn("nemo")),
+    Key([win], "e", lazy.spawn("nemo")),
 
-    # Screenshot
-    Key([mod], "s", lazy.spawn("scrot -s")),
+    Key([win], "s", lazy.spawn("scrot '%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'")),
 
-    # Terminal
-    Key([mod], "Return", lazy.spawn("kitty")),
-
-    # Redshift
-    Key([mod], "r", lazy.spawn("redshift -O 1400")),
-    Key([mod, "shift"], "r", lazy.spawn("redshift -x")),
-
+    Key([win], "Return", lazy.spawn("kitty")),
 ]

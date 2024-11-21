@@ -37,12 +37,12 @@ def workspaces():
             **base(fg='light'),
             font='UbuntuMono Nerd Font',
             fontsize=19,
-            margin_y=3,
+            margin_y=2,
             margin_x=0,
             padding_y=8,
             padding_x=5,
             borderwidth=1,
-            active=colors['active'], # color that the groups will have when they have something inside
+            active=colors['active'],
             inactive=colors['inactive'],
             rounded=False,
             highlight_method='block',
@@ -64,10 +64,22 @@ primary_widgets = [
 
     separator(),
 
- #powerline('color3', 'text'),
+    powerline('color4', 'dark'),
+
+    icon(bg="color4", text=' '), # Icon: nf-fa-download
+
+    widget.CheckUpdates(
+        background=colors['color4'],
+        colour_have_updates=colors['text'],
+        colour_no_updates=colors['text'],
+        no_update_string='0',
+        display_format='{updates}',
+        distro='Ubuntu',
+        update_interval=1800,
+    ),
 
 
-    powerline('color2', 'dark'),
+    powerline('color2', 'color4'),
 
     widget.CurrentLayoutIcon(**base(bg='color2'), scale=0.65,),
 
