@@ -14,9 +14,9 @@ Theme: Catpuccin Mocha
 
 OS: POP! OS 
 
-![env](https://github.com/user-attachments/assets/6f78885d-e8eb-4ace-9345-a7529163ebe1)
+![Sc1](/assets/sc1.png)
 
 
-https://github.com/user-attachments/assets/b5c063bb-2fea-46ff-ad42-08a2a62e21ad
+![S2](/assets/s2.png)
 
 Script that show animated pokemon sprites in terminal [DexVision](https://github.com/PauBotella/DexVision)
