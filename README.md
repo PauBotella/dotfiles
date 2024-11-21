@@ -20,9 +20,6 @@ OS: POP! OS
 ![S2](/assets/s2.png)
 
 
-![S3](/assets/dotfiles.mov)
-
-
 https://github.com/user-attachments/assets/fdc217bb-f342-4777-8137-aed37879e531
 
 
